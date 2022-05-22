@@ -28,7 +28,7 @@ const findResult = await orders.find({
 
 ## Queries
 
-* Query for data that exactly matches a value provided in the query document. A **literal value query** has two parts:  
+Query for data that exactly matches a value provided in the query document. A **literal value query** has two parts:  
 
 1. a field name
 2. a value
