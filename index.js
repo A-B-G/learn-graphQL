@@ -1,8 +1,14 @@
+require('dotenv').config();
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
 
 const app = express();
+
+/* >> create db connection >> */
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once('open', () => console.log("Connected to MongDB"));
+/* << << << */
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
